@@ -12,11 +12,11 @@ import pandas as pd
 
 
 #Import the model and the weights
-model = torch.hub.load(r"D:\My-personal-projects\My-personal-projects\ML - Trash Categorizing\yolov5-master", 'custom', path=r"D:\My-personal-projects\My-personal-projects\ML - Trash Categorizing\yolov5 training weights\second.pt", source = 'local', force_reload=True)
+model = torch.hub.load(r"D:\Git_Repo\Trash_Categorizing\yolov5-master", 'custom', path=r"D:\Git_Repo\Trash_Categorizing\yolov5 training weights\second.pt", source = 'local', force_reload=True)
 
 
 # Add in location to select image.
-logo = Image.open(r'D:\My-personal-projects\My-personal-projects\ML - Trash Categorizing\images\tekwill_logo.png')
+logo = Image.open(r'D:\Git_Repo\Trash_Categorizing\images\tekwill_logo.png')
 st.sidebar.image(logo, use_column_width=True)
 st.sidebar.write('#### Select the app mode you want to use.')
 
@@ -55,11 +55,11 @@ if choice == "Photo":
 
     #Processing and saving the image 
     image_result = model(image, size = 640)
-    image_result.save(save_dir = r'D:\My-personal-projects\My-personal-projects\ML - Trash Categorizing\results')
+    image_result.save(save_dir = r'D:\Git_Repo\Trash_Categorizing\results')
     
 
     #Opening the saved image
-    result_image = Image.open(r'D:\My-personal-projects\My-personal-projects\ML - Trash Categorizing\results\image0.jpg')
+    result_image = Image.open(r'D:\Git_Repo\Trash_Categorizing\results\image0.jpg')
     
     # Display image.
     st.image(result_image,
