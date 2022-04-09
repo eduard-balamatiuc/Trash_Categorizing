@@ -1,0 +1,28 @@
+names:
+- Aluminium foil
+- Broken glass
+- Cigarette
+- Clear plastic bottle
+- Corrugated carton
+- Disposable plastic cup
+- Drink can
+- Garbage bag
+- Glass bottle
+- Metal bottle cap
+- Normal paper
+- Other carton
+- Other plastic wrapper
+- Other plastic
+- Paper cup
+- Plastic bottle cap
+- Plastic film
+- Plastic lid
+- Plastic straw
+- Pop tab
+- Rope - strings
+- Single-use carrier bag
+- Styrofoam piece
+- Unlabeled litter
+nc: 24
+train: Trash-detection-4/train/images
+val: Trash-detection-4/valid/images
