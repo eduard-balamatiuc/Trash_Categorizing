@@ -16,8 +16,6 @@ model = torch.hub.load(r"D:\Git_Repo\Trash_Categorizing\yolov5-master", 'custom'
 
 
 # Add in location to select image.
-logo = Image.open(r'D:\Git_Repo\Trash_Categorizing\images\tekwill_logo.png')
-st.sidebar.image(logo, use_column_width=True)
 st.sidebar.write('#### Select the app mode you want to use.')
 
 #creating the mode choice button
@@ -100,8 +98,7 @@ elif choice == "Camera detection":
 
 #The description page of the project
 elif choice == "About":
-    st.write("# Tekwill Junior Ambassadors ")
-    st.write("###### This is a project created by Eduard Balamatiuc and Daria Gheorghieș ")
+    st.write("###### This is a project created by Eduard Balamatiuc")
     st.write("---")
     st.write("### The problem addressed:")
     st.write("Serious pollution of the environment, which leads to damage to human health and the quality of ecosystems is a major problem today. Large unmonitored areas and overcrowded with waste are red areas that indirectly end up causing diseases that sometimes lead to deaths.")
