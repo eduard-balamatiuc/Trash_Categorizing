@@ -12,7 +12,7 @@ import pandas as pd
 
 
 #Import the model and the weights
-model = torch.hub.load(r"D:\Git_Repo\Trash_Categorizing\yolov5-master", 'custom', path=r"D:\Git_Repo\Trash_Categorizing\yolov5 training weights\second.pt", source = 'local', force_reload=True)
+model = torch.hub.load(r"yolov5-master", 'custom', path=r"v5_weights/second.pt", source = 'local', force_reload=True)
 
 # Add in location to select image.
 st.sidebar.write('#### Select the app mode you want to use.')
@@ -46,10 +46,10 @@ if choice == "Photo":
 
     #Processing and saving the image 
     image_result = model(image, size = 640)
-    image_result.save(save_dir = r'D:\Git_Repo\Trash_Categorizing\results')
+    image_result.save(save_dir = r'temp_img/')
 
     #Opening the saved image
-    result_image = Image.open(r'D:\Git_Repo\Trash_Categorizing\results\image0.jpg')
+    result_image = Image.open(r'temp_img/image0.jpg')
     
     # Display image.
     st.image(result_image,
