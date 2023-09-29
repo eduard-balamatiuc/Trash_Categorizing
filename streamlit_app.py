@@ -14,14 +14,12 @@ import pandas as pd
 #Import the model and the weights
 model = torch.hub.load(r"D:\Git_Repo\Trash_Categorizing\yolov5-master", 'custom', path=r"D:\Git_Repo\Trash_Categorizing\yolov5 training weights\second.pt", source = 'local', force_reload=True)
 
-
 # Add in location to select image.
 st.sidebar.write('#### Select the app mode you want to use.')
 
 #creating the mode choice button
 mode = ["About", "Photo", "Camera detection"]
 choice = st.sidebar.selectbox("Select Activity", mode)
-
 
 if choice == "Photo":
     st.sidebar.write('#### Select an image to upload.')
@@ -30,13 +28,8 @@ if choice == "Photo":
                                             type=['png', 'jpg', 'jpeg'],
                                             accept_multiple_files=False)
 
-    ##########
-    ##### Set up main app.
-    ##########
-
     ## Title.
     st.write('# Trash type Detection')
-
 
     ## Pull in default image or user-selected image.
     if uploaded_file is None:
@@ -54,7 +47,6 @@ if choice == "Photo":
     #Processing and saving the image 
     image_result = model(image, size = 640)
     image_result.save(save_dir = r'D:\Git_Repo\Trash_Categorizing\results')
-    
 
     #Opening the saved image
     result_image = Image.open(r'D:\Git_Repo\Trash_Categorizing\results\image0.jpg')
@@ -83,7 +75,6 @@ elif choice == "Camera detection":
     cam = cv2.VideoCapture(0)
     cam.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
     cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 640)
-
 
     while run:
         #Reading and converting the image
